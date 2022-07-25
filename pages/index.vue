@@ -243,11 +243,11 @@ body {
 }
 
 a {
-  color: black;
+  color: black !important;
 }
 
 a:hover {
-  color: black;
+  color: black !important;
 }
 
 .no_underline {
@@ -396,6 +396,15 @@ button:hover {
 
 /* PHONE STYLING */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
+
+  .buttons {
+    display: block;
+    
+  }
+
+  .buttons button {
+    margin-bottom: 3vh;
+  }
 
   .demo_buttons {
     display: block;

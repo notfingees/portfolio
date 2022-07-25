@@ -129,6 +129,7 @@ export default {
 
   .preview {
     width: 100% !important;
+    min-width: 100%;
   }
 
 
