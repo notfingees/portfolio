@@ -313,7 +313,7 @@ a:hover {
 }
 
 @font-face {
-  font-family: "Menlo", monospace;
+  font-family: "Menlo";
   src: local("Menlo"), url(~/assets/Menlo.ttf) format("truetype");
   font-display: swap;
 }
@@ -354,7 +354,7 @@ a:hover {
 }
 
 .intro_description {
-  font-family: "Menlo", monospace;
+  font-family: "Menlo";
   font-size: 1.em;
 }
 
@@ -391,7 +391,7 @@ a:hover {
 button {
   border: 0.1px solid black;
   background-color: #E0C1BD;
-  font-family: "Menlo", monospace;
+  font-family: "Menlo";
   font-size: 1.1em;
   padding: 1vw;
   width: 10em;
@@ -410,7 +410,7 @@ button:hover {
 }
 .technologies_used {
   display: flex;
-  font-family: "Menlo", monospace;
+  font-family: "Menlo";
 }
 
 .project {
