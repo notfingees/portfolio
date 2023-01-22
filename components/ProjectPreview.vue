@@ -77,12 +77,12 @@ export default {
 
 
   h1 {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
   }
 
   .description, p, a {
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     display: block;
   }
 
@@ -112,7 +112,7 @@ export default {
 button {
   border: 0.1px solid black;
   background-color: #E0C1BD;
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   font-size: 1.1em;
   padding: 1vw;
   width: 10em;

@@ -1,19 +1,22 @@
 @font-face {
-  font-family: "Proxima Nova Medium";
+  font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   src: local("Proxima Nova Medium"),
     url(~/assets/ProximaNovaMedium.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   src: local("Proxima Nova Extra Condensed"),
     url(~/assets/ProximaNovaExtraCondensed.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   src: local("Menlo"), url(~/assets/Menlo.ttf) format("truetype");
+  font-display: swap;
 }
 
 /* COLLECTION DETAILS */
@@ -25,19 +28,19 @@
 }
 
 p {
-  font-family: "Proxima Nova Medium";
+  font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   font-size: 1.25vw;
   line-height: 150.8%;
 }
 
 h1 {
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   font-size: 2.5vw;
 }
 
 h2 {
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1.75vw;
 }
@@ -45,7 +48,7 @@ h2 {
 .featured_post_metadata,
 .featured_post_description {
   font-size: 1vw;
-  font-family: "Proxima Nova Medium";
+  font-family: "Proxima Nova Medium", Helvetica, sans-serif;
 }
 
 .article_image {
@@ -55,7 +58,7 @@ h2 {
 
 .featured_post_title {
   font-size: 1.25vw;
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
 }
 
 .featured_post {
@@ -80,7 +83,7 @@ h2 {
 }
 
 .image_description {
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   color: dimgray;
   font-size: 1vw;
 }
@@ -91,14 +94,14 @@ a {
 }
 
 .return_to_blog {
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1.25vw;
   text-decoration: none;
 }
 
 ul {
-  font-family: "Proxima Nova Medium";
+  font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   font-size: 1.25vw;
   line-height: 150.8%;
 }

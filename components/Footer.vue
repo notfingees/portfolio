@@ -53,7 +53,7 @@ button {
   color: black;
   border: 1px solid black;
   padding: 0.5vw;
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   transition: background-color 0.25s ease-out 1ms, color 0.25s ease-out 1ms;
 }
 button:hover {
@@ -73,7 +73,7 @@ button:hover {
 }
 a {
   color: black;
-  font-family: "Proxima Nova Medium";
+  font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   font-size: 1.15vw;
   line-height: 1.5vw;
   text-decoration: none;
@@ -81,7 +81,7 @@ a {
 
 button {
   color: black;
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   font-size: 1vw;
   line-height: 1.5vw;
   text-decoration: none;
@@ -98,7 +98,7 @@ a:hover {
   .copyright {
     font-size: 1vw;
     color: black;
-    font-family: "Proxima Nova Medium";
+    font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     margin-top: 10vh;
   }
   .icon {
@@ -135,19 +135,19 @@ a:hover {
   }
   h2 {
     color: black;
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.75vw;
   }
   h3 {
     color: black;
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.15vw;
   }
   p {
     color: black;
-    font-family: "Proxima Nova Medium";
+    font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     font-size: 1.15vw;
     line-height: 1.5vw;
   }
@@ -196,7 +196,7 @@ a:hover {
   .copyright {
     font-size: 3vw;
     color: black;
-    font-family: "Proxima Nova Medium";
+    font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     margin-top: 7vh;
   }
 
@@ -217,19 +217,19 @@ a:hover {
   }
   h2 {
     color: black;
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 6vw;
   }
   h3 {
     color: black;
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 6vw;
   }
   p {
     color: black;
-    font-family: "Proxima Nova Medium";
+    font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     font-size: 4vw;
   }
   .logo {
@@ -248,13 +248,13 @@ a:hover {
 
   a {
     color: black;
-    font-family: "Proxima Nova Medium";
+    font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     font-size: 4vw;
     line-height: 200%;
   }
 
   button {
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     color: black;
     font-size: 5vw;
     padding: 2vw;

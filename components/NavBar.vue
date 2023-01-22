@@ -84,7 +84,7 @@ a:hover {
 
 .promotional {
   background-color: black;
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -141,13 +141,13 @@ a:hover {
   }
   .brand {
     color: black;
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     font-size: 1.3125vw;
     margin-left: 2vw;
   }
   .navbar-link {
     color: black;
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     font-size: 1.3125vw;
     position: relative;
     top: 0.75vh;
@@ -224,7 +224,7 @@ a:hover {
 
   .brand {
     color: black;
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     font-size: 6vw;
     margin-left: 2vw;
     width: auto;
@@ -232,7 +232,7 @@ a:hover {
   }
   .navbar-link {
     color: black;
-    font-family: "Menlo";
+    font-family: "Menlo", monospace;
     font-size: 6vw;
     position: relative;
     top: 0vh;

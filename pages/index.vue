@@ -299,13 +299,13 @@ a:hover {
 
 <style scoped>
 @font-face {
-  font-family: "Proxima Nova Medium";
+  font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   src: local("Proxima Nova Medium"),
     url(~/assets/ProximaNovaMedium.ttf) format("truetype");
   font-display: swap;
 }
 @font-face {
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   src: local("Proxima Nova Extra Condensed"),
     url(~/assets/ProximaNovaExtraCondensed.ttf) format("truetype");
@@ -313,7 +313,7 @@ a:hover {
 }
 
 @font-face {
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   src: local("Menlo"), url(~/assets/Menlo.ttf) format("truetype");
   font-display: swap;
 }
@@ -354,7 +354,7 @@ a:hover {
 }
 
 .intro_description {
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   font-size: 1.em;
 }
 
@@ -391,7 +391,7 @@ a:hover {
 button {
   border: 0.1px solid black;
   background-color: #E0C1BD;
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
   font-size: 1.1em;
   padding: 1vw;
   width: 10em;
@@ -410,7 +410,7 @@ button:hover {
 }
 .technologies_used {
   display: flex;
-  font-family: "Menlo";
+  font-family: "Menlo", monospace;
 }
 
 .project {
@@ -418,12 +418,12 @@ button:hover {
 }
 
 .title {
-  font-family: "Proxima Nova";
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
 }
 
   .subtitle {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
   }
 
@@ -467,7 +467,7 @@ button:hover {
   }
 
   .title {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 7vw;
     line-height: 7vw;
