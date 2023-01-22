@@ -365,6 +365,7 @@ button {
   font-size: 1em;
   padding: 1vw;
   width: 10em;
+  transition: box-shadow 0.25s ease-out 1ms;
 }
 button:hover {
   box-shadow: 0.5em 0.5em;

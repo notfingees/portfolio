@@ -1,14 +1,16 @@
 <template>
   <!-- eslint-disable-->
   <div class="section">
-
+    
     <div class="left">
     <h1>{{name}}</h1>
     <p class="description">{{description}}</p>
     <p class="description">Technologies used: {{stack}}</p>
     <p class="description" v-if="skills">Skills showcased: {{skills}}</p>
-    <!--<a class="demo" v-if="demo_link" v-bind:href="demo_link">View Demo</a>
-    <a class="demo" v-if="github_link" v-bind:href="github_link">Github</a>-->
+    <!-- <div class="demo_buttons">
+    <a class="demo" v-if="demo_link" v-bind:href="demo_link" target='_blank'><button>View Demo</button></a>
+    <a class="demo" v-if="github_link" v-bind:href="github_link" target='_blank'><button>Github</button></a>
+    </div> -->
 
     <div class="spacer"></div>
     </div>
@@ -21,7 +23,7 @@
       <nuxt-img width=1000 height=1000 format="webp" placeholder v-if="name=='This Website'" class="preview" src='/projects/personal/cover.png' alt="Personal cover image"/>
       <nuxt-img width=2956 height=1506 format="webp" placeholder v-if="name=='5x5GUYS'" class="preview" src='/projects/5x5guys/cover.png' alt="5x5guys cover image"/>
     </div>
-
+  
   </div>
 </template>
 
@@ -37,6 +39,7 @@ export default {
       github_link: null,
       image_url: null,
       skills: null,
+      slug: null,
 
 
   },
@@ -63,11 +66,12 @@ export default {
     padding: 2vw;
     border: 0.1px solid black;
     gap: 5vw;
+    transition: box-shadow 0.25s ease-out 1ms;
     
   }
 
   .section:hover {
-    box-shadow: 0.75em 0.75em;
+    box-shadow: 0.75em 0.75em black;
 
   }
 
@@ -105,6 +109,21 @@ export default {
 
 
 
+button {
+  border: 0.1px solid black;
+  background-color: #E0C1BD;
+  font-family: "Menlo";
+  font-size: 1.1em;
+  padding: 1vw;
+  width: 10em;
+  transition: box-shadow 0.25s ease-out 1ms;
+}
+button:hover {
+  box-shadow: 0.5em 0.5em;
+}
+
+
+
   
 @media only screen and (min-width: 601px) {
   
@@ -113,6 +132,13 @@ export default {
 }
 
 @media only screen and (max-width: 600px) and (orientation: portrait) {
+
+  .demo_buttons {
+    display: block;
+    width: 50%;
+    margin-left: 6vw;
+    margin-top: -27vh;
+  }
 
   .spacer {
     height: 18vh;
@@ -130,6 +156,10 @@ export default {
   .preview {
     width: 100% !important;
     min-width: 100%;
+  }
+
+  button {
+    padding: 2vh;
   }
 
 

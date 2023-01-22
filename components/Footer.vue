@@ -54,6 +54,7 @@ button {
   border: 1px solid black;
   padding: 0.5vw;
   font-family: "Menlo";
+  transition: background-color 0.25s ease-out 1ms, color 0.25s ease-out 1ms;
 }
 button:hover {
   color: #E0C1BD;

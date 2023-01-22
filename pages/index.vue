@@ -19,6 +19,8 @@
 
     </section>
 
+    <!-- <canvas id="gradient-canvas" data-transition-in /> -->
+
     <section id="about">
       <div id="about">
         <div class="left">
@@ -68,6 +70,7 @@
           v-bind:github_link="project.github_link"
           v-bind:image_url="project.image_url"
           v-bind:skills="project.skills"
+          v-bind:slug="project.slug"
           ></ProjectPreview>
           </NuxtLink>
 
@@ -100,6 +103,9 @@ import Footer from '@/components/Footer.vue'
 import ProjectPreview from '@/components/ProjectPreview.vue'
 import {page} from 'vue-analytics'
 import $ from 'jquery';
+import { Gradient } from '@/plugins/gradient.js'
+
+        
 
 export default {
   name: 'index',
@@ -125,7 +131,7 @@ export default {
       {name: "Newco", slug: "newco", description: "User interfaces and experiences designed for a talent management startup founded by two ex-McKinsey consultants. The UIUX underwent three rounds of user testing before being implemented and presented to multiple VC firms.", 
       stack: "Vue, Bootstrap, Javascript, HTML, CSS"},
       {name: "Text Art Generator", slug: "textart", 
-      description: "Algorithm that uses image processing and curve fitting to convert SVG files into text line art. Try the demo!", stack: "Python (Numpy, PIL) ", github_link: "https://www.github.com/notfingees/textart", demo_link: "https://www.justinshi.io/textart"},
+      description: "Algorithm that uses image processing and curve fitting to convert SVG files into text line art. Try the demo!", stack: "Python (Numpy, PIL) ", github_link: "https://www.github.com/notfingees/textart"},
       /*{name: "This Website", slug: "personal", description: "My personal design and development portfolio. See how I built it in a day here!",
        stack: "Nuxt, Javascript, HTML, CSS ", github_link: "github.com/notfingees/portfolio", demo_link: "https://www.justinshi.io"}, */
       {name: "5x5GUYS", slug: "5x5guys", description: "A generative and fully-customizable collection of text art NFTs stored directly on the Polygon blockchain.", stack: "Nuxt, Javascript, HTML, CSS, Web3js, Web3py", github_link: "https://www.github.com/notfingees/5x5guys_ssr", demo_link: "https://www.5x5guys.com", image_url: 'none'}],
@@ -171,13 +177,13 @@ export default {
       if (percent > 1 && !this.$data.about_section_shown){
         $("#about div").addClass("load");
         this.$data.about_section_shown = true
-        console.log('showing about section')
+        // console.log('showing about section')
       }
 
       if (percent > 22  && !this.$data.past_projects_shown){
         this.$data.past_projects_shown = true
         $("#past_projects div").addClass("load");  
-        console.log("showing past projects")
+        // console.log("showing past projects")
       }
 
       if (this.$data.past_projects_shown && this.$data.about_section_shown){
@@ -194,6 +200,12 @@ export default {
 
     document.addEventListener("scroll", this.handleTopWriteScroll);
 
+    // Create your instance
+    const gradient = new Gradient()
+
+    // Call `initGradient` with the selector to your canvas
+    gradient.initGradient('#gradient-canvas')
+
     // $("#about div").addClass("load"); 
     // $("#past_projects div").addClass("load"); 
 
@@ -202,8 +214,21 @@ export default {
 }
 </script>
 <style>
+
+#gradient-canvas {
+  width:100%;
+  height:100%;
+  --gradient-color-1: #c3e4ff; 
+  --gradient-color-2: #6ec3f4; 
+  --gradient-color-3: #eae2ff;  
+  --gradient-color-4: #b9beff;
+}
+      
+
+
 body {
   margin: 0 !important;
+  background-color: #E0C1BD !important;
 }
 
 ::-webkit-scrollbar {
@@ -226,7 +251,7 @@ body {
 }
 
 
-#about div, #past_projects div{
+/* #about div, #past_projects div{
       -webkit-transition: opacity s ease-in;
        -moz-transition: opacity 0.5s ease-in;
         -ms-transition: opacity 0.5s ease-in;
@@ -239,6 +264,22 @@ body {
 
 
 #about div.load, #past_projects div.load {
+  opacity: 1;
+} */
+
+#about div{
+      -webkit-transition: opacity s ease-in;
+       -moz-transition: opacity 0.5s ease-in;
+        -ms-transition: opacity 0.5s ease-in;
+         -o-transition: opacity 0.5s ease-in;
+            transition: opacity 0.5s ease-in;
+
+            opacity: 0;
+}
+
+
+
+#about div.load {
   opacity: 1;
 }
 
@@ -283,9 +324,13 @@ a:hover {
   padding-top: 2vh;
 }
 
+.demo button {
+  transition: box-shadow 0.25s ease-out 1ms;
+}
+
 .demo button:hover {
-  box-shadow: 0em 0em;
-  background-color: white;
+  box-shadow: 0.5em 0.5em;
+  /* background-color: white; */
 }
 
 .demo_buttons {
@@ -350,6 +395,7 @@ button {
   font-size: 1.1em;
   padding: 1vw;
   width: 10em;
+  transition: box-shadow 0.25s ease-out 1ms;
 }
 button:hover {
   box-shadow: 0.5em 0.5em;
