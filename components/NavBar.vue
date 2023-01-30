@@ -10,7 +10,7 @@
         <NuxtLink class="navbar-link" :to="{path: '/', hash: '#about'}">About</NuxtLink>
         <NuxtLink class="navbar-link" :to="{path: '/', hash: '#past_projects'}">Work</NuxtLink>
         <a class="navbar-link" href="mailto:justinshi2023@u.northwestern.edu">Contact</a>
-        <a class="navbar-link" target="_blank" href="/Justin_Shi_Resume.pdf">Resume</a>
+        <a class="navbar-link" target="_blank" href="./Justin_Shi_Resume.pdf">Resume</a>
       </div>
     </div>
 
@@ -23,7 +23,7 @@
           <NuxtLink class="navbar-link" :to="{path: '/', hash: '#about'}">About</NuxtLink>
           <NuxtLink class="navbar-link" :to="{path: '/', hash: '#past_projects'}">Work</NuxtLink>
           <a class="navbar-link" href="mailto:justinshi2023@u.northwestern.edu">Contact</a>
-          <a class="navbar-link" target="_blank" href="/Justin_Shi_Resume.pdf">Resume</a>
+          <a class="navbar-link" target="_blank" href="./Justin_Shi_Resume.pdf">Resume</a>
         </div>
       </div>
     </div>
