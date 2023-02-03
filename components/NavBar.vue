@@ -83,7 +83,7 @@ a:hover {
 }
 
 .promotional {
-  background-color: black;
+  background-color: white;
   font-family: "Proxima Nova", Helvetica, sans-serif;
   font-weight: bold;
   color: white;
@@ -126,7 +126,7 @@ a:hover {
     top: 0vw;
     width: 100%;
     height: auto;
-    background-color: #D0C0E2;
+    background-color: #282F35;
     padding-top: 2vh;
   }
   .navbar-inner {
@@ -140,13 +140,13 @@ a:hover {
     gap: 3vw;
   }
   .brand {
-    color: black;
+    color: white;
     font-family: "Menlo", monospace;
     font-size: 1.3125vw;
     margin-left: 2vw;
   }
   .navbar-link {
-    color: black;
+    color: white;
     font-family: "Menlo", monospace;
     font-size: 1.3125vw;
     position: relative;
@@ -200,7 +200,7 @@ a:hover {
     top: 0vw;
     width: 100vw;
     height: auto;
-    background-color: #D0C0E2;
+    background-color: #282F35;
     padding-top: 2vh;
   }
 
@@ -208,7 +208,7 @@ a:hover {
     display: block;
     padding-left: 10vw;
     padding-right: 10vw;
-    background-color: #D0C0E2;
+    background-color: #282F35;
     padding-bottom: 2.5vh;
     padding-top: 5vh;
     margin-top: -7vh;
@@ -223,7 +223,7 @@ a:hover {
   }
 
   .brand {
-    color: black;
+    color: white;
     font-family: "Menlo", monospace;
     font-size: 6vw;
     margin-left: 2vw;
@@ -231,7 +231,7 @@ a:hover {
     margin-top: 0.3vh;
   }
   .navbar-link {
-    color: black;
+    color: white;
     font-family: "Menlo", monospace;
     font-size: 6vw;
     position: relative;

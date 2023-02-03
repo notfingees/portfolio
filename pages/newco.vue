@@ -175,12 +175,12 @@ export default {
 <style>
 body {
   margin: 0 !important;
-  background-color: #D0C0E2 !important;
+  background-color: #282F35 !important;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: #D0C0E2;
+    background-color: #282F35;
     
 }
 
@@ -189,7 +189,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: black;
+    background: white;
     -webkit-box-shadow: none;
 }
 
@@ -215,11 +215,11 @@ body {
 }
 
 a {
-  color: black;
+  color: white;
 }
 
 a:hover {
-  color: black;
+  color: white;
 }
 
 </style>
@@ -291,7 +291,7 @@ ul, li {
   color: #000000;
   margin-top: 60px;
   width: 100%;
-  background-color: #D0C0E2;
+  background-color: #282F35;
 }
 
 .intro_description {
@@ -336,7 +336,7 @@ ul, li {
 .feature_image {
   width: 100%;
   height: auto;
-  border: 0.1px solid black;
+  border: 0.1px solid white;
   box-shadow: 0.5em 0.5em;
 }
 
@@ -362,8 +362,8 @@ ul, li {
 }
 
 button {
-  border: 0.1px solid black;
-  background-color: #D0C0E2;
+  border: 0.1px solid white;
+  background-color: #282F35;
   font-family: "Menlo", monospace;
   font-size: 1em;
   padding: 1vw;
@@ -377,7 +377,7 @@ button:hover {
 .me {
   width: 18em;
   height: auto;
-  border: 0.1px solid black;
+  border: 0.1px solid white;
   box-shadow: 0.75em 0.75em;
   margin-top: 5vh;
 }

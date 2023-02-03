@@ -63,7 +63,7 @@ h2 {
 
 .featured_post {
   width: 25vw;
-  border: 0.1px solid black;
+  border: 0.1px solid white;
 }
 
 .inner_featured_post {
@@ -79,7 +79,7 @@ h2 {
 
 .featured_posts_div a {
   text-decoration: none !important;
-  color: black !important;
+  color: white !important;
 }
 
 .image_description {
@@ -89,7 +89,7 @@ h2 {
 }
 
 a {
-  color: black;
+  color: white;
   text-decoration: underline;
 }
 

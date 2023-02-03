@@ -48,17 +48,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 button {
-  background-color: #D0C0E2;
-  outline: black;
-  color: black;
-  border: 1px solid black;
+  background-color: #282F35;
+  outline: white;
+  color: white;
+  border: 1px solid white;
   padding: 0.5vw;
   font-family: "Menlo", monospace;
   transition: background-color 0.25s ease-out 1ms, color 0.25s ease-out 1ms;
 }
 button:hover {
-  color: #D0C0E2;
-  background-color: black;
+  color: #282F35;
+  background-color: white;
 }
 .actionRegistered {
   display: none;
@@ -72,7 +72,7 @@ button:hover {
   overflow-x: hidden !important;
 }
 a {
-  color: black;
+  color: white;
   font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   font-size: 1.15vw;
   line-height: 1.5vw;
@@ -80,7 +80,7 @@ a {
 }
 
 button {
-  color: black;
+  color: white;
   font-family: "Menlo", monospace;
   font-size: 1vw;
   line-height: 1.5vw;
@@ -91,13 +91,13 @@ button {
   text-decoration: underline;
 }
 a:hover {
-  color: black;
+  color: white;
   text-decoration: underline;
 }
 @media only screen and (min-width: 601px) {
   .copyright {
     font-size: 1vw;
-    color: black;
+    color: white;
     font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     margin-top: 10vh;
   }
@@ -113,7 +113,7 @@ a:hover {
   }
 
   .footer {
-    background-color: #D0C0E2;
+    background-color: #282F35;
 
     height: auto;
     position: relative;
@@ -134,19 +134,19 @@ a:hover {
     padding-right: 10vw;
   }
   h2 {
-    color: black;
+    color: white;
     font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.75vw;
   }
   h3 {
-    color: black;
+    color: white;
     font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.15vw;
   }
   p {
-    color: black;
+    color: white;
     font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     font-size: 1.15vw;
     line-height: 1.5vw;
@@ -195,13 +195,13 @@ a:hover {
 
   .copyright {
     font-size: 3vw;
-    color: black;
+    color: white;
     font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     margin-top: 7vh;
   }
 
   .footer {
-    background-color: #D0C0E2;
+    background-color: #282F35;
     height: auto;
     position: relative;
     bottom: 0;
@@ -216,19 +216,19 @@ a:hover {
     row-gap: 0vw;
   }
   h2 {
-    color: black;
+    color: white;
     font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 6vw;
   }
   h3 {
-    color: black;
+    color: white;
     font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 6vw;
   }
   p {
-    color: black;
+    color: white;
     font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     font-size: 4vw;
   }
@@ -247,7 +247,7 @@ a:hover {
   }
 
   a {
-    color: black;
+    color: white;
     font-family: "Proxima Nova Medium", Helvetica, sans-serif;
     font-size: 4vw;
     line-height: 200%;
@@ -255,7 +255,7 @@ a:hover {
 
   button {
     font-family: "Menlo", monospace;
-    color: black;
+    color: white;
     font-size: 5vw;
     padding: 2vw;
     line-height: 200%;

@@ -64,14 +64,14 @@ export default {
   .section {
     display: flex;
     padding: 2vw;
-    border: 0.1px solid black;
+    border: 0.1px solid white;
     gap: 5vw;
     transition: box-shadow 0.25s ease-out 1ms;
     
   }
 
   .section:hover {
-    box-shadow: 0.75em 0.75em black;
+    box-shadow: 0.75em 0.75em white;
 
   }
 
@@ -102,16 +102,16 @@ export default {
   height: auto;
   max-height: 40vh;
 
-    border: 0.1px solid black;
-    box-shadow: 0.5em 0.5em;
+    border: 0.1px solid white;
+    /* box-shadow: 0.5em 0.5em; */
   }
 
 
 
 
 button {
-  border: 0.1px solid black;
-  background-color: #D0C0E2;
+  border: 0.1px solid white;
+  background-color: #282F35;
   font-family: "Menlo", monospace;
   font-size: 1.1em;
   padding: 1vw;

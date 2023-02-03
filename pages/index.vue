@@ -21,7 +21,7 @@
 
         <model-viewer 
       id="body" 
-      alt="ignore alt" 
+      alt="Voxel body" 
       src="./models/body.gltf"
       shadow-intensity="0" 
       camera-controls touch-action="none" 
@@ -34,7 +34,7 @@
 
       <model-viewer 
       id="portrait" 
-      alt="ignore alt" 
+      alt="Voxel head of myself" 
       src="./models/portrait.gltf"
       scale="0.8 0.8 0.8"
       shadow-intensity="0" 
@@ -59,7 +59,7 @@
 
 <model-viewer 
 id="body" 
-alt="ignore alt" 
+alt="Voxel body" 
 src="./models/body.gltf"
 shadow-intensity="0" 
 camera-controls touch-action="none" 
@@ -72,7 +72,7 @@ disable-zoom generate-schema></model-viewer>
 
 <model-viewer 
 id="portrait" 
-alt="ignore alt" 
+alt="Voxel head of myself" 
 src="./models/portrait.gltf"
 scale="0.8 0.8 0.8"
 shadow-intensity="0" 
@@ -110,36 +110,32 @@ disable-zoom generate-schema></model-viewer>
 
     <section id="about">
       <div id="about">
-        <div class="left">
-
         <h2 class="subtitle">About Me</h2>
-        <p class="intro_description">In high school, I did graphic design and created basic websites for clients. I wanted to incorporate more control and interactivity, 
-          and so I learned the basics of HTML and CSS.<br><br>Four years later, I'm graduating Northwestern University with a degree in computer science and the experience
-          of having worked in the Web3, entertainment, and management industries. <br><br>Here are some of the technologies I've been working with recently.</p>
+        <p class="intro_description">I'm graduating Northwestern University with a degree in computer science.</p>
+        <div class="columns">
+          <div class="column">
+            <p class="intro_description">I've implemented responsive user experiences that have involved generative animations, 3D renders, complex data visualizations, and high-volume eCommerce interfaces. </p>
+            <!--<nuxt-img format="webp" placeholder class="me" src="/me.png" alt='photo of justin shi' width=200 height=200 />-->
+            <canvas id="gradient-canvas" data-transition-in />
+          </div>
+          <div class="column">
+            <p class="intro_description">I've built backend features requiring high-throughput, low-latency transactions; AI-powered data sanitation and analysis; RESTful APIs; and blockchain interactions.  </p>
+            <div class="name_to_svg_wrapper">
+              <p class="intro_description">Submit your name to see how popular it was in 2015!</p>
+              <input type="text" v-model="user_name" placeholder="Your name here">
+              <button id="convert_button" v-on:click="get_popularity">Convert</button>
 
-          <div class="technologies_used">
-            <div class="col">
-              <ul>
-                <li>Vue, Nuxt, and Node.js</li>
-                <li>web3.js</li>
-                <li>Mocha</li>
-              </ul>
+
             </div>
-            <div class="col">
-              <ul>
-                <li>Swift</li>
-                <li>Python</li>
-                <li>SQL</li>
-              </ul>
-            </div>
-
           </div>
-
+          <div class="column">
+            <p class="intro_description">Outside of software engineering, I'm an <a href='https://www.instagram.com/fingees' target='_blank'>aspiring artist/content-creator</a> and can type at 200 words per minute.  </p>
+            <nuxt-img format="webp" placeholder class="me" src="/fingees.png" alt='Picture of finger to represent my art' width=200 height=200 />
           </div>
-
-          <div class="right">
-            <nuxt-img format="webp" placeholder class="me" src="/me.png" alt='photo of justin shi' width=200 height=200 />
           </div>
+        <br><br>
+        <p class="intro_description">Please view some projects I've worked on below:</p>
+           
       </div>
     </section>
 
@@ -231,6 +227,8 @@ export default {
 
       modelViewerLoaded: false,
       desktop: true,
+
+      user_name: "",
     }
   },
   created: function () {
@@ -242,6 +240,28 @@ export default {
   },
 
   methods: {
+
+    get_popularity: function () {
+
+      const self = this;
+
+      $.post(
+        "https://inwritingapi.com/personal_portfolio/get_name_popularity.php",
+        { name: this.$data.user_name },
+        function (data) {
+
+          if (data.length > 0){
+          var popularity = data[0]['rank'];
+          alert(self.user_name + " was the #" + popularity.toString() + "th most popular name.")
+          }
+          else {
+            alert("No one was named that in 2015.")
+          }
+        },
+        "json"
+      );
+
+    },
 
     loadSections: function () {
 
@@ -382,10 +402,10 @@ export default {
 
 
     // Create your instance
-    // const gradient = new Gradient()
+    const gradient = new Gradient()
 
     // Call `initGradient` with the selector to your canvas
-    // gradient.initGradient('#gradient-canvas')
+    gradient.initGradient('#gradient-canvas')
 
     // $("#about div").addClass("load"); 
     // $("#past_projects div").addClass("load"); 
@@ -411,24 +431,27 @@ export default {
 <style>
 
 #gradient-canvas {
-  width:100%;
-  height:100%;
-  --gradient-color-1: #c3e4ff; 
-  --gradient-color-2: #6ec3f4; 
-  --gradient-color-3: #eae2ff;  
-  --gradient-color-4: #b9beff;
+  width:300px;
+  height:300px;
+  --gradient-color-1: #FF78BF; 
+  --gradient-color-2: #3ADADD; 
+  --gradient-color-3: #76FF89;  
+  --gradient-color-4: #FF78BF;
 }
-      
 
+
+h2, h1, p, button {
+  color: white !important;
+}
 
 body {
   margin: 0 !important;
-  background-color: #D0C0E2 !important;
+  background-color: #282F35 !important;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: #D0C0E2;
+    background-color: #282F35;
     
 }
 
@@ -437,12 +460,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: black;
+    background: white;
     -webkit-box-shadow: none;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
     background: none;
+}
+
+.name_to_svg_wrapper {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 2rem;
 }
 
 
@@ -479,11 +507,11 @@ body {
 }
 
 a {
-  color: black !important;
+  color: white !important;
 }
 
 a:hover {
-  color: black !important;
+  color: white !important;
 }
 
 .no_underline {
@@ -525,6 +553,15 @@ model-viewer {
   --poster-color: transparent;
 }
 
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.column {
+  width: 30vw;
+}
 
 
 @font-face {
@@ -547,6 +584,29 @@ model-viewer {
   font-display: swap;
 }
 
+input {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+
+}
+
+input, input::placeholder {
+  font-family: "Menlo", monospace;
+}
+
+#convert_button {
+  margin-top: 1rem;
+}
+
+
 .buttons {
   display: flex;
   gap: 3vw;
@@ -567,7 +627,9 @@ model-viewer {
   gap: 3vw;
   position: absolute;
   margin-top: -18vh;
+  margin-left: 5vh;
 }
+
 
 
 #app {
@@ -578,7 +640,7 @@ model-viewer {
   color: #000000;
   margin-top: 60px;
   width: 100%;
-  background-color: #D0C0E2;
+  background-color: #282F35;
 }
 
 .intro_description {
@@ -602,22 +664,21 @@ model-viewer {
 
 #about {
   text-align: left;
-  display: flex;
-  padding-bottom: 15vh;
+  display: block;
+  padding-bottom: 10vh;
   padding-top: 5vh;
-  gap: 5vw;
 }
 
 #past_projects {
   text-align: left;
-  padding-top: 5vh;
+  padding-top: 0;
 
   
 }
 
 button {
-  border: 0.1px solid black;
-  background-color: #D0C0E2;
+  border: 0.1px solid white;
+  background-color: #282F35;
   font-family: "Menlo", monospace;
   font-size: 1.1em;
   padding: 1vw;
@@ -631,9 +692,9 @@ button:hover {
 .me {
   width: 18em;
   height: auto;
-  border: 0.1px solid black;
-  box-shadow: 0.75em 0.75em;
-  margin-top: 5vh;
+  /* border: 0.1px solid white; */
+  /* box-shadow: 0.75em 0.75em; */
+  /* margin-top: 5vh; */
 }
 .technologies_used {
   display: flex;
@@ -714,7 +775,7 @@ button:hover {
   .demo_buttons {
     display: block;
     width: 50%;
-    margin-left: 6vw;
+    margin-left: 10vw;
     margin-top: -27vh;
   }
 
@@ -748,6 +809,15 @@ button:hover {
 
   #about {
     flex-direction: column-reverse;
+    padding-top: 0;
+  }
+
+  .columns {
+    display: block;
+  }
+
+  .column {
+    width: 100%;
   }
 
   .subtitle {

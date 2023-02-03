@@ -11,8 +11,9 @@ export default function ({ app }) {
     //const close_error = () => document.getElementById("nuxt_error").remove();
 
     const node = document.createElement("div");
-    node.style.backgroundColor = 'white';
-    node.style.border = '0.1px solid black';
+    node.style.backgroundColor = '#282F35';
+    node.style.border = '0.1px solid white';
+    node.style.color = 'white';
     node.style.boxShadow = '10px 10px';
     node.style.position = 'fixed';
     node.style.left = '50%';
