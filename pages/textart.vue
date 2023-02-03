@@ -167,6 +167,12 @@ export default {
 }
 </script>
 <style>
+
+h2, h1, p, button, ul, li, h3 {
+  color: white !important;
+}
+
+
 body {
   margin: 0 !important;
   background-color: #282F35 !important;

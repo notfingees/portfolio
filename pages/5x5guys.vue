@@ -264,6 +264,10 @@ a:hover {
   color: white;
 }
 
+h2, h1, p, button, ul, li, h3 {
+  color: white !important;
+}
+
 </style>
 
 <style scoped>
