@@ -123,7 +123,7 @@ disable-zoom generate-schema></model-viewer>
             <div class="name_to_svg_wrapper">
               <p class="intro_description">Submit your name to see how popular it was in 2015!</p>
               <input type="text" v-model="user_name" placeholder="Your name here">
-              <button id="convert_button" v-on:click="get_popularity">Convert</button>
+              <button id="convert_button" v-on:click="get_popularity">Submit</button>
 
 
             </div>
@@ -265,6 +265,8 @@ export default {
 
     loadSections: function () {
 
+        console.log("in loadsections");
+
         $("#about div").addClass("load");
         this.$data.about_section_shown = true
  
@@ -337,7 +339,7 @@ export default {
     this.$data.desktop = !window.matchMedia("only screen and (max-width: 600px)").matches;
 
 
-    document.addEventListener("scroll", this.handleTopWriteScroll);
+    document.addEventListener("scroll", this.loadSections);
 
     addEventListener('mousemove', (event) => {
 
@@ -497,7 +499,7 @@ body {
          -o-transition: opacity 0.5s ease-in;
             transition: opacity 0.5s ease-in;
 
-            opacity: 0;
+            opacity: 1;
 }
 
 
