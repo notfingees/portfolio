@@ -22,7 +22,7 @@
         <model-viewer 
       id="body" 
       alt="ignore alt" 
-      src="/models/body.gltf"
+      src="./models/body.gltf"
       shadow-intensity="0" 
       camera-controls touch-action="none" 
       interaction-prompt="none"
@@ -35,7 +35,7 @@
       <model-viewer 
       id="portrait" 
       alt="ignore alt" 
-      src="/models/portrait.gltf"
+      src="./models/portrait.gltf"
       scale="0.8 0.8 0.8"
       shadow-intensity="0" 
       camera-controls touch-action="none" 
@@ -60,7 +60,7 @@
 <model-viewer 
 id="body" 
 alt="ignore alt" 
-src="/models/body.gltf"
+src="./models/body.gltf"
 shadow-intensity="0" 
 camera-controls touch-action="none" 
 interaction-prompt="none"
@@ -73,7 +73,7 @@ disable-zoom generate-schema></model-viewer>
 <model-viewer 
 id="portrait" 
 alt="ignore alt" 
-src="/models/portrait.gltf"
+src="./models/portrait.gltf"
 scale="0.8 0.8 0.8"
 shadow-intensity="0" 
 camera-controls touch-action="none" 
