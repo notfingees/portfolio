@@ -111,7 +111,7 @@ export default {
 
 button {
   border: 0.1px solid black;
-  background-color: #E0C1BD;
+  background-color: #D0C0E2;
   font-family: "Menlo", monospace;
   font-size: 1.1em;
   padding: 1vw;

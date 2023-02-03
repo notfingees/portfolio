@@ -68,6 +68,7 @@ export default {
     { src: '~/plugins/vue-gtag' },
     { src: '~/plugins/vue-analytics' },
     { src: '~/plugins/errors' },
+    // { src: '~/plugins/model-viewer', mode: "client" },
 
   ],
 

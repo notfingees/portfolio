@@ -280,11 +280,12 @@ export default {
 <style>
 body {
   margin: 0 !important;
+  background-color: #D0C0E2 !important;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
     
 }
 
@@ -395,7 +396,7 @@ ul, li {
   color: #000000;
   margin-top: 60px;
   width: 100%;
-  background-color: #E0C1BD;
+  background-color: #D0C0E2;
 }
 
 .intro_description {
@@ -467,7 +468,7 @@ ul, li {
 
 button {
   border: 0.1px solid black;
-  background-color: #E0C1BD;
+  background-color: #D0C0E2;
   font-family: "Menlo", monospace;
   font-size: 1em;
   padding: 1vw;

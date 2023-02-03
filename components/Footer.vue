@@ -48,7 +48,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 button {
-  background-color: #E0C1BD;
+  background-color: #D0C0E2;
   outline: black;
   color: black;
   border: 1px solid black;
@@ -57,7 +57,7 @@ button {
   transition: background-color 0.25s ease-out 1ms, color 0.25s ease-out 1ms;
 }
 button:hover {
-  color: #E0C1BD;
+  color: #D0C0E2;
   background-color: black;
 }
 .actionRegistered {
@@ -113,7 +113,7 @@ a:hover {
   }
 
   .footer {
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
 
     height: auto;
     position: relative;
@@ -201,7 +201,7 @@ a:hover {
   }
 
   .footer {
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
     height: auto;
     position: relative;
     bottom: 0;

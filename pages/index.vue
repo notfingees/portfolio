@@ -2,7 +2,8 @@
   <!-- eslint-disable -->
   <div id="app">
     <div class="margins">
-    <section id="intro">
+    <section id="intro" v-if="desktop">
+      <div class="intro_wrapper">
       <div class="intro">
 
         <h1 class="title">Hi, I'm Justin.</h1>
@@ -15,6 +16,92 @@
 
       </div>
 
+      <!-- <model-viewer alt="ignore alt" src="/models/runnynose.gltf" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom auto-rotate generate-schema></model-viewer> -->
+      <div class="portrait_wrapper">
+
+        <model-viewer 
+      id="body" 
+      alt="ignore alt" 
+      src="/models/body.gltf"
+      shadow-intensity="0" 
+      camera-controls touch-action="none" 
+      interaction-prompt="none"
+      orientation="0deg 0deg 180deg"
+      exposure="0.5"
+      environment-image=""
+       disable-zoom generate-schema></model-viewer>
+
+
+      <model-viewer 
+      id="portrait" 
+      alt="ignore alt" 
+      src="/models/portrait.gltf"
+      scale="0.8 0.8 0.8"
+      shadow-intensity="0" 
+      camera-controls touch-action="none" 
+      interaction-prompt="none"
+      orientation="0deg 0deg 180deg"
+      exposure="0.5"
+      environment-image=""
+       disable-zoom generate-schema></model-viewer>
+
+      </div>
+
+    </div>
+
+
+    </section>
+
+    <section id="intro" v-else>
+      <div class="intro_wrapper">
+
+        <div class="portrait_wrapper">
+
+<model-viewer 
+id="body" 
+alt="ignore alt" 
+src="/models/body.gltf"
+shadow-intensity="0" 
+camera-controls touch-action="none" 
+interaction-prompt="none"
+orientation="0deg 0deg 180deg"
+exposure="0.5"
+environment-image=""
+disable-zoom generate-schema></model-viewer>
+
+
+<model-viewer 
+id="portrait" 
+alt="ignore alt" 
+src="/models/portrait.gltf"
+scale="0.8 0.8 0.8"
+shadow-intensity="0" 
+camera-controls touch-action="none" 
+interaction-prompt="none"
+orientation="0deg 0deg 180deg"
+exposure="0.5"
+environment-image=""
+disable-zoom generate-schema></model-viewer>
+
+</div>
+
+
+      <div class="intro">
+
+        <h1 class="title">Hi, I'm Justin.</h1>
+        <p class="intro_description">I’m a software engineer specializing in designing and building efficient and exceptional digital experiences. I'm currently looking for work as a full-stack software engineer.</p>
+
+        <div class="buttons">
+          <a href='#past_projects'><button>Past Work</button></a>
+          <a href='./Justin_Shi_Resume.pdf' target='_blank'><button>Resume</button></a>
+        </div>
+
+      </div>
+
+      <!-- <model-viewer alt="ignore alt" src="/models/runnynose.gltf" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom auto-rotate generate-schema></model-viewer> -->
+      
+
+    </div>
 
 
     </section>
@@ -95,6 +182,8 @@
   </div>
 </template>
 
+<!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">/*eslint-disable*/</script> -->
+
 <script>
 /* eslint-disable */
 
@@ -104,7 +193,7 @@ import ProjectPreview from '@/components/ProjectPreview.vue'
 import {page} from 'vue-analytics'
 import $ from 'jquery';
 import { Gradient } from '@/plugins/gradient.js'
-
+// import modelViewer from "@google/model-viewer";
         
 
 export default {
@@ -139,6 +228,9 @@ export default {
 
       about_section_shown: false,
       past_projects_shown: false,
+
+      modelViewerLoaded: false,
+      desktop: true,
     }
   },
   created: function () {
@@ -151,8 +243,22 @@ export default {
 
   methods: {
 
+    loadSections: function () {
+
+        $("#about div").addClass("load");
+        this.$data.about_section_shown = true
+ 
+
+        this.$data.past_projects_shown = true
+        $("#past_projects div").addClass("load");  
+
+        document.removeEventListener("scroll", this.loadSections)
+        
+
+    },
 
     handleTopWriteScroll: function () {
+      
       /*      
       var s = $(window).scrollTop(),
       d = $(document).height(),
@@ -196,18 +302,107 @@ export default {
 
 
   },
+
+  computed: {
+    loadComponent() {
+      return () => import('@google/model-viewer');
+    },
+  },
+
+
   mounted: function () {
 
-    document.addEventListener("scroll", this.handleTopWriteScroll);
+    this.loadComponent();
+
+    this.$data.desktop = !window.matchMedia("only screen and (max-width: 600px)").matches;
+
+
+    document.addEventListener("scroll", this.loadSections);
+
+    addEventListener('mousemove', (event) => {
+
+      let isMobile = window.matchMedia("only screen and (max-width: 600px)").matches;
+
+      if (isMobile){
+
+        var cx = event.clientX;
+        var cy = event.clientY;
+
+        // cy goes from low (top) to high (bottom)
+        // cx goes from low (left) to high (right) 
+        // everything in 360 degrees 
+
+        // first figure out left and right
+
+        var clientx = window.innerWidth;
+        var clienty = window.innerHeight;
+
+        var roll = "0deg"
+        // pitch is between -45 (looking up) and 45 (looking down)
+        var pitch_int = cy/clienty*-90 + 45
+        var pitch = pitch_int.toString() + "deg";
+        // yaw between 90 and -90
+        var yaw_int = cx/clientx*180 - 90 + 180;
+        var yaw = yaw_int.toString() + "deg";
+
+        document.getElementById("portrait").orientation = roll + " " + pitch + " " + yaw;
+
+        document.getElementById('body').orientation = roll + " " + "5deg " + yaw;
+
+      }
+
+      else{
+
+        var cx = event.clientX;
+        var cy = event.clientY;
+
+        // cy goes from low (top) to high (bottom)
+        // cx goes from low (left) to high (right) 
+        // everything in 360 degrees 
+
+        // first figure out left and right
+
+        var clientx = window.innerWidth;
+        var clienty = window.innerHeight;
+
+        var roll = "0deg"
+        // pitch is between -45 (looking up) and 45 (looking down)
+        var pitch_int = cy/clienty*-90 + 45
+        var pitch = pitch_int.toString() + "deg";
+        // yaw between 90 and -90
+        var yaw_int = cx/clientx*180 - 90 + 135;
+        var yaw = yaw_int.toString() + "deg";
+
+        document.getElementById("portrait").orientation = roll + " " + pitch + " " + yaw;
+
+        document.getElementById('body').orientation = roll + " " + "5deg " + yaw;
+      }
+    
+    });
+
 
     // Create your instance
-    const gradient = new Gradient()
+    // const gradient = new Gradient()
 
     // Call `initGradient` with the selector to your canvas
-    gradient.initGradient('#gradient-canvas')
+    // gradient.initGradient('#gradient-canvas')
 
     // $("#about div").addClass("load"); 
     // $("#past_projects div").addClass("load"); 
+
+
+    /* rotate model */
+
+    // var self = this;
+    // const check_portrait_loaded = setInterval(function () {
+    //   console.log("in interval", document.getElementById("portrait").loaded);
+    //   if (document.getElementById("portrait").loaded){
+    //     clearInterval(check_portrait_loaded);
+    //     self.modelViewerLoaded = true;
+    //   }
+    // }, 5);
+
+
 
     
   }
@@ -228,12 +423,12 @@ export default {
 
 body {
   margin: 0 !important;
-  background-color: #E0C1BD !important;
+  background-color: #D0C0E2 !important;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
     
 }
 
@@ -298,6 +493,40 @@ a:hover {
 </style>
 
 <style scoped>
+
+.intro_wrapper {
+  display: flex;
+}
+.portrait_wrapper {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+#portrait {
+  width: 30rem;
+  height: 20rem;
+  position: absolute;
+}
+
+#body {
+  width: 30rem;
+  height: 20rem;
+  position: absolute;
+  margin-top: 11%;
+  margin-left: 2%;
+
+}
+
+model-viewer::part(default-progress-bar){
+  background-color: transparent;
+}
+
+model-viewer {
+  --poster-color: transparent;
+}
+
+
+
 @font-face {
   font-family: "Proxima Nova Medium", Helvetica, sans-serif;
   src: local("Proxima Nova Medium"),
@@ -338,7 +567,6 @@ a:hover {
   gap: 3vw;
   position: absolute;
   margin-top: -18vh;
-  margin-left: 2vw;
 }
 
 
@@ -350,7 +578,7 @@ a:hover {
   color: #000000;
   margin-top: 60px;
   width: 100%;
-  background-color: #E0C1BD;
+  background-color: #D0C0E2;
 }
 
 .intro_description {
@@ -369,7 +597,6 @@ a:hover {
 .intro {
   text-align: left;
   padding-top: 15vh;
-  margin-right: 24vw;
   padding-bottom: 15vh;
 }
 
@@ -390,7 +617,7 @@ a:hover {
 
 button {
   border: 0.1px solid black;
-  background-color: #E0C1BD;
+  background-color: #D0C0E2;
   font-family: "Menlo", monospace;
   font-size: 1.1em;
   padding: 1vw;
@@ -443,8 +670,40 @@ button:hover {
 /* PHONE STYLING */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
 
+
+.portrait_wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+}
+
+#portrait {
+  width: 20rem;
+  height: 10rem;
+  position: absolute;
+  margin-left: -1rem;
+
+}
+
+#body {
+  width: 20rem;
+  height: 15rem;
+  position: absolute;
+  margin-top: 3.5rem;
+  margin-left: 0;
+  
+
+}
+
+.intro_wrapper {
+  display: block;
+}
+
+
   .buttons {
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     
   }
 
@@ -471,6 +730,7 @@ button:hover {
     font-weight: bold;
     font-size: 7vw;
     line-height: 7vw;
+    margin-top: 10rem;
   }
 
   .intro_desciption {
@@ -479,6 +739,7 @@ button:hover {
 
   .intro {
     margin-right: 0vw;
+    justify-content: center;
   }
 
   button {

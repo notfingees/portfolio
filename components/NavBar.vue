@@ -126,7 +126,7 @@ a:hover {
     top: 0vw;
     width: 100%;
     height: auto;
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
     padding-top: 2vh;
   }
   .navbar-inner {
@@ -200,7 +200,7 @@ a:hover {
     top: 0vw;
     width: 100vw;
     height: auto;
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
     padding-top: 2vh;
   }
 
@@ -208,7 +208,7 @@ a:hover {
     display: block;
     padding-left: 10vw;
     padding-right: 10vw;
-    background-color: #E0C1BD;
+    background-color: #D0C0E2;
     padding-bottom: 2.5vh;
     padding-top: 5vh;
     margin-top: -7vh;
