@@ -116,7 +116,7 @@ disable-zoom generate-schema></model-viewer>
           <div class="column">
             <p class="intro_description">I've implemented responsive user experiences that have involved generative animations, 3D renders, complex data visualizations, and high-volume eCommerce interfaces. </p>
             <!--<nuxt-img format="webp" placeholder class="me" src="/me.png" alt='photo of justin shi' width=200 height=200 />-->
-            <canvas id="gradient-canvas" data-transition-in />
+            <canvas class="me" id="gradient-canvas" data-transition-in />
           </div>
           <div class="column">
             <p class="intro_description">I've built backend features requiring high-throughput, low-latency transactions; AI-powered data sanitation and analysis; RESTful APIs; and blockchain interactions.  </p>
@@ -337,7 +337,7 @@ export default {
     this.$data.desktop = !window.matchMedia("only screen and (max-width: 600px)").matches;
 
 
-    document.addEventListener("scroll", this.loadSections);
+    document.addEventListener("scroll", this.handleTopWriteScroll);
 
     addEventListener('mousemove', (event) => {
 
