@@ -111,7 +111,7 @@ disable-zoom generate-schema></model-viewer>
     <section id="about">
       <div id="about">
         <h2 class="subtitle">About Me</h2>
-        <p class="intro_description">I'm graduating Northwestern University with a degree in computer science.</p>
+        <p class="intro_description">I'm graduating from Northwestern University with a degree in computer science.</p>
         <div class="columns">
           <div class="column">
             <p class="intro_description">I've implemented responsive user experiences that have involved generative animations, 3D renders, complex data visualizations, and high-volume eCommerce interfaces. </p>
