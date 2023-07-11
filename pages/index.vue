@@ -129,7 +129,7 @@ disable-zoom generate-schema></model-viewer>
             </div>
           </div>
           <div class="column">
-            <p class="intro_description">Outside of software engineering, I'm an <a href='https://www.instagram.com/fingees' target='_blank'>aspiring artist/content-creator</a> and can type at 200 words per minute.  </p>
+            <p class="intro_description">Outside of software engineering, I'm an aspiring artist/content-creator and can type at 200 words per minute.  </p>
             <nuxt-img format="webp" placeholder class="me" src="/fingees.png" alt='Picture of finger to represent my art' width=200 height=200 />
           </div>
           </div>
